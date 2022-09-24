@@ -47,19 +47,16 @@ const Map = ({ lng, lat }) => {
                         scene.add(ambientLight);
 
                         loader = new GLTFLoader();
-                        const source = '../../assets/pin.gltf';
+                        const source = './pin.gltf';
 
                         loader.load(
                             source,
                             gltf => {
-                                console.log("works")
-                                gltf.scene.scale.set(25, 25, 25);
+                                gltf.scene.scale.set(15, 15, 15);
                                 gltf.scene.rotation.x = 180 * Math.PI / 180;
                                 gltf.scene.position.z = 5;
                                 scene.add(gltf.scene);
                             },
-                            () => { },
-                            () => { }
                         );
                     }
 
