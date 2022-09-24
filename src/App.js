@@ -2,6 +2,9 @@ import './App.css';
 import InputComponent from './components/input/input';
 import Map from './components/map/map';
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom'
+import Navigation from './components/navigation/naviagation';
+import DirectionComponent from './components/direction/direction';
 
 function App() {
 
@@ -12,8 +15,15 @@ function App() {
 
   return (
     <div className="App">
-      <InputComponent />
-      <Map lat={lat} lng={lng} />
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<>
+          <InputComponent />
+          <Map lat={lat} lng={lng} /></>}>
+        </Route>
+        <Route path='/dir' element={<DirectionComponent />}>
+        </Route>
+      </Routes>
     </div>
   );
 }

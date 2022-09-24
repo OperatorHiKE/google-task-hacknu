@@ -1,0 +1,11 @@
+.inputContainer {
+	width: 100%;
+}
+.input {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.inputCon {
+	border-bottom: 1px !important;
+}
