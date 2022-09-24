@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import InputComponent from './components/input/input';
+import Map from './components/map/map';
+import { useState } from 'react';
 
 function App() {
+
+  const [lat, setLat] = useState(35.6594945)
+  const [lng, setLng] = useState(139.6999859)
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputComponent />
+      <Map lat={lat} lng={lng} />
     </div>
   );
 }
