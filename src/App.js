@@ -17,11 +17,11 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/" element={<>
+        <Route path="/dir" element={<>
           <InputComponent />
           <Map lat={lat} lng={lng} /></>}>
         </Route>
-        <Route path='/dir' element={<DirectionComponent />}>
+        <Route path='/' element={<DirectionComponent />}>
         </Route>
       </Routes>
     </div>

@@ -1,9 +1,15 @@
 .inputContainer {
 	width: 100%;
+	border-color: black;
 }
 .input {
 	margin: 0 auto;
 	width: 80%;
+	border: solid 1px black;
+}
+
+.input:focus {
+	outline: none;
 }
 
 .inputCon {

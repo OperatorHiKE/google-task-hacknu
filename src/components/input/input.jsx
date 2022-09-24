@@ -4,6 +4,7 @@ import Map from '../map/map';
 import History from '../history/history';
 import s from './style.module.css';
 
+
 const InputComponent = (props) => {
 	const [inputData, setData] = useState('');
 
@@ -12,6 +13,7 @@ const InputComponent = (props) => {
 	const [history, setHistory] = useState([]);
 
 	const [isClicked, setClick] = useState(false);
+
 
 	const onInputChange = (e) => {
 		setData(e.target.value);
@@ -23,6 +25,10 @@ const InputComponent = (props) => {
 	};
 
 	const clicked = () => {
+		if(inputData.trim() === ''){
+			alert("Данные пустые");
+			return;
+		}
 		history.push(inputData);
 		axios
 			.get(
@@ -41,9 +47,9 @@ const InputComponent = (props) => {
 	};
 
 	return (
-		<div className={s.inputContainer}>
-			<div className={s.inputCon}>
-				<input onChange={onInputChange} type='search' className={s.input} />
+		<div className='inputContainer'>
+			<div className='inputCon'>
+				<input onChange={onInputChange} type='search' placeholder='Enter the city/place/etc' className="input"/>
 				<button onClick={clicked}>Send</button>
 			</div>
 			<Map lat={lat} lng={lng} />

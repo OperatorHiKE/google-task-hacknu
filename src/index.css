@@ -1,8 +1,114 @@
 body {
-	display: grid;
+	display: flex;
+	justify-content: space-between;
 	grid-template-areas: 'history map';
 	margin: 0;
 	padding: 0;
+}
+
+#root {
+	width: 500px;
+	box-sizing: content-box;
+	display: flex;
+	justify-content: center;
+}
+
+.inputCon {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+
+	padding: 20px 0;
+}
+
+.inputCon input {
+	width: 200px;
+	height: 40px;
+
+	padding-left: 5px;
+	background-color: #fafafa;
+	border: 0;
+	box-shadow: 0 0 4px rgba(0,0,0,0.3);
+	transition: .3s box-shadow;
+}
+
+.inputCon input:hover {
+	box-shadow: 0 0 4px rgba(0,0,0, 0.5);
+}
+
+.inputCon input:focus {
+	outline: none;
+	box-shadow: 0 0 4px rgba(0,0,0, 0.7);
+}
+
+.inputCon button {
+	font-size: 1.3em;
+	font-weight: 400;
+}
+
+.App {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	border-radius: 2%;
+	/*border: dashed 2px orange;*/
+}
+
+.App header {
+	/*border: dashed 3px red;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 50px;
+	margin-left: 10px;
+}
+
+
+.App a {
+	font-size: 2em;
+	text-decoration: underline;
+	padding: 6px;
+}
+
+.App header a:hover {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.history {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.history .list {
+	margin-top: 10px;
+	padding: 10px 50px 0 50px;
+	gap: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-style: italic;
+	font-size: 1.7em;
+	color: rgba(0,0,0, 0.5);
+
+	background-color: rgba(168, 151, 151, 0.93);
+	overflow: hidden;
+}
+
+.history .list span {
+	cursor: pointer;
+}
+
+.history .list span:hover {
+	color: rgba(0,0,0, 0.8);
+}
+
+.history h4 {
+	font-size: 2em;
+	letter-spacing: 4px;
+	border-bottom: 2px solid rgba(0,0,0, 0.5);
 }
 
 code {

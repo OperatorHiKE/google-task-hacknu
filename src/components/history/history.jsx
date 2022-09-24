@@ -21,17 +21,19 @@ const History = (props) => {
 			});
 	};
 
-	console.log(history);
 
 	return (
 		<div className='history'>
-			<h4>История поиска:</h4>
-			{history.map((h) => (
-				<>
-					<span onClick={() => onClick(h)}>{h}</span>
-					<br />
-				</>
-			))}
+			<h4>Your requests</h4>
+			<div className='list'>
+				{history.map((h) => (
+					<>
+						<span onClick={() => onClick(h)}>{h}</span>
+						<br />
+					</>
+				))}
+			</div>
+
 		</div>
 	);
 };

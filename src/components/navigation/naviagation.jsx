@@ -1,14 +1,18 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Navigation = () => {
 	return (
 		<>
 			<header>
 				<div>
-					<Link to='/dir'>Directions</Link>
+					<NavLink className={({ isActive }) =>
+						isActive ? 'bg-green-500 font-bold' : 'bg-red-500 font-thin'
+					} to='/dir'>Search</NavLink>
 				</div>
 				<div>
-					<Link to='/'>Search</Link>
+					<NavLink className={({ isActive }) =>
+						isActive ? 'bg-green-500 font-bold' : 'bg-red-500 font-thin'
+					} to='/'>Directions</NavLink>
 				</div>
 			</header>
 			<Outlet />
